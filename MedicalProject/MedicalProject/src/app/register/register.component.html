@@ -1,13 +1,10 @@
-<div fxLayoutAlign="center">Medical Project</div>
-
-<div fxLayoutAlign="center center" fxFlexFill class="main-div">
+<div fxLayoutAlign="center center" fxFlexFill class="main-register">
     <mat-card fxFlex="20">
         <mat-toolbar color="warn">
           Login
         </mat-toolbar>
-  <div>
-   <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" 
-   (ngSubmit)="loginProces()">
+  
+   <form fxLayoutAlign="stretch" fxLayout="column">
         <mat-form-field fxLayoutAlign="center">
           <mat-label>Email</mat-label>
           <input matInput placeholder="Ex. example@medical.com" formControlName="email">
@@ -19,12 +16,11 @@
         </mat-form-field>
 
         <mat-card-actions fxLayoutAlign="center">
-           <button mat-raised-button color="warn">
+           <button mat-button type="Submit" class="mt-5" color="warn">
              Login
           </button>
         </mat-card-actions>
-<div fxLayoutAlign="center"><button mat-button color="warn" flat href="./register">Nu ai cont?Creeaza unul</button></div>
-</form>
-  </div>
+     
+    </form>
     </mat-card>
 </div>
