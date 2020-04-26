@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { RegisterComponent } from './register/register.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -17,7 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
-import { RegisterComponent } from './register/register.component';
+import {MatStepperModule} from '@angular/material/stepper';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { RegisterComponent } from './register/register.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

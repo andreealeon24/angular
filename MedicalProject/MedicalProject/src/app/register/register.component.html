@@ -1,26 +1,36 @@
-<div fxLayoutAlign="center center" fxFlexFill class="main-register">
-    <mat-card fxFlex="20">
-        <mat-toolbar color="warn">
-          Login
-        </mat-toolbar>
-  
-   <form fxLayoutAlign="stretch" fxLayout="column">
-        <mat-form-field fxLayoutAlign="center">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Ex. example@medical.com" formControlName="email">
-        </mat-form-field>
-      
-        <mat-form-field fxLayoutAlign="center">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="password" formControlName="password">
-        </mat-form-field>
 
-        <mat-card-actions fxLayoutAlign="center">
-           <button mat-button type="Submit" class="mt-5" color="warn">
-             Login
-          </button>
-        </mat-card-actions>
-     
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Completeaza numele</ng-template>
+      <mat-form-field>
+        <mat-label>Nume</mat-label>
+        <input matInput placeholder="Nume, Prenume" formControlName="firstCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Urmatorul</button>
+      </div>
     </form>
-    </mat-card>
-</div>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Completeaza adresa</ng-template>
+      <mat-form-field>
+        <mat-label>Adresa</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. Iuliu Maniu, Brasov,Romania"
+               required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Inapoi</button>
+        <button mat-button matStepperNext>Urmatorul</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Finalizeaza Cont</ng-template>
+    <div>
+      <button mat-button matStepperPrevious>Inapoi</button>
+      <button mat-button >Finalizeaza</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

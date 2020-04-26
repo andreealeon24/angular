@@ -1,30 +1,44 @@
-<div fxLayoutAlign="center">Medical Project</div>
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="20" >
+    <mat-card-title style="text-align:center;"></mat-card-title>
+        <mat-card-content>
+          <form fxLayoutAlign="stretch" fxLayout="column" action="">
+            
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Email"
+                required
+                name="email"
+                ngModel
+                #email="ngModel">
+                <mat-error *ngIf="email.invalid"></mat-error>
+              <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Password"
+                type="password"
+                required
+                name="password"
+                ngModel
+                #password="ngModel">
+                <mat-error
+                  *ngIf="password.errors">
+                </mat-error>
+              <mat-icon matSuffix>lock</mat-icon>
 
-<div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="20">
-        <mat-toolbar color="warn">
-          Login
-        </mat-toolbar>
-  <div>
-   <form fxLayoutAlign="stretch" fxLayout="column" class="login-form" [formGroup]="formGroup" 
-   (ngSubmit)="loginProces()">
-        <mat-form-field fxLayoutAlign="center">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Ex. example@medical.com" formControlName="email">
-        </mat-form-field>
-      
-        <mat-form-field fxLayoutAlign="center">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="password" formControlName="password">
-        </mat-form-field>
-
-        <mat-card-actions fxLayoutAlign="center">
-           <button mat-raised-button color="warn">
-             Login
-          </button>
-        </mat-card-actions>
-<div fxLayoutAlign="center"><button mat-button color="warn" flat href="./register">Nu ai cont?Creeaza unul</button></div>
-</form>
-  </div>
-    </mat-card>
+            </mat-form-field>
+  
+            <button
+              mat-raised-button
+              color="warn"
+              class="login-button">
+              Login
+            </button>
+            <div fxLayoutAlign="center"><button mat-button color="warn" flat href="./register">Nu ai cont?Creeaza unul</button></div>
+          </form>
+        </mat-card-content>
+  </mat-card>
 </div>
